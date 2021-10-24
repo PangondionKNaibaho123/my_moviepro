@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:my_moviepro/widgets/now_play.dart';
+import 'package:my_moviepro/widgets/top_rated.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 
 
@@ -83,8 +84,13 @@ class _MoviedbMain extends State<MoviedbMain>{
       ),
       drawer: AppsDrawer(),
       body: ListView(
+        scrollDirection: Axis.vertical,
         children: [
-          NowPlaying(nowplay:nowplayingmovies)
+          NowPlaying(nowplay:nowplayingmovies),
+          Padding(
+            padding: EdgeInsets.only(top: 10.0),
+            child: TopRated(toprated: topratedmovies),
+          )
         ],
       ),
     );
