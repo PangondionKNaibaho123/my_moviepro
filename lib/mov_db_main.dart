@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:my_moviepro/widgets/now_play.dart';
+import 'package:my_moviepro/widgets/popular.dart';
 import 'package:my_moviepro/widgets/top_rated.dart';
 import 'package:tmdb_api/tmdb_api.dart';
 
@@ -90,7 +91,11 @@ class _MoviedbMain extends State<MoviedbMain>{
           Padding(
             padding: EdgeInsets.only(top: 10.0),
             child: TopRated(toprated: topratedmovies),
-          )
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 10.0),
+            child: Popular(popular: popularmovies),
+          ),
         ],
       ),
     );
