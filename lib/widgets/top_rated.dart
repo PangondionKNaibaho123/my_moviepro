@@ -19,7 +19,7 @@ class TopRated extends StatelessWidget{
           Padding(
             padding: EdgeInsets.only(top: 15.0),
             child: Container(
-              height: 290,
+              height: 320,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: toprated.length,
