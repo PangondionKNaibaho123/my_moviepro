@@ -17,7 +17,22 @@ class NowPlaying extends StatelessWidget{
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          modifiedText(text:'Now Playing', size: 26, color: Colors.black,),
+          Row(
+            children: [
+              modifiedText(text:'Now Playing', color: Colors.black, size: 26),
+              Padding(
+                padding: EdgeInsets.only(left: 180.0),
+                child: InkWell(
+                  onTap: (){},
+                  child: Text(
+                    'MORE',
+                    style: GoogleFonts.breeSerif(color: Colors.grey, fontSize: 16),
+                  ),
+                )
+              ),
+
+            ],
+          ),
           Padding(
             padding: EdgeInsets.only(top: 10.0),
             child: Container(
