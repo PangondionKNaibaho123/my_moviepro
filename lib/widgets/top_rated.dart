@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_moviepro/utils/text.dart';
 
 class TopRated extends StatelessWidget{
@@ -19,7 +20,7 @@ class TopRated extends StatelessWidget{
           Padding(
             padding: EdgeInsets.only(top: 15.0),
             child: Container(
-              height: 320,
+              height: 250,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: toprated.length,
@@ -39,7 +40,40 @@ class TopRated extends StatelessWidget{
                             ),
                           ),
                           Container(
-                              child: modifiedText(text: toprated[index]['title']!=null?toprated[index]['title']:'Loading..', size: 17, color: Colors.black,)
+                              child: Align(
+                                  alignment: Alignment(-0.9,-0.9),
+                                  child: Column(
+                                    children: [
+                                      //modifiedText(text: nowplay[index]['title']!=null?nowplay[index]['title']:'Loading..', size: 17, color: Colors.black,),
+                                      Text(
+                                        toprated[index]['title'],
+                                        style: GoogleFonts.breeSerif(
+                                            color: Colors.black, fontSize: 16
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ],
+                                  )
+
+                              )
+                          ),
+                          Container(
+                              child: Align(
+                                  alignment: Alignment(-0.9,-0.9),
+                                  child: Column(
+                                    children: [
+                                      //modifiedText(text: nowplay[index]['title']!=null?nowplay[index]['title']:'Loading..', size: 17, color: Colors.black,),
+                                      Text(
+                                        toprated[index]['release_date'],
+                                        style: GoogleFonts.breeSerif(
+                                            color: Colors.grey, fontSize: 13
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ],
+                                  )
+
+                              )
                           )
                         ],
                       ),

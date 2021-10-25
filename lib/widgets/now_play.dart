@@ -21,7 +21,7 @@ class NowPlaying extends StatelessWidget{
           Padding(
             padding: EdgeInsets.only(top: 10.0),
             child: Container(
-              height: 400,
+              height: 350,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: nowplay.length,
