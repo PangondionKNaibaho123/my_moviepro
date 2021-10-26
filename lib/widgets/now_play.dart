@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_moviepro/detail/detail_nowplay.dart';
 import 'package:my_moviepro/utils/text.dart';
 
 
@@ -9,6 +10,11 @@ class NowPlaying extends StatelessWidget{
   final List nowplay;
 
   const NowPlaying({Key? key, required this.nowplay}) : super(key: key);
+
+  /*final String apikey_e1;
+  final String apireadaccesstoken_e1;*/
+
+  //const NowPlaying({Key? key, required this.nowplay, required this.apikey_e1, required this.apireadaccesstoken_e1}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +48,9 @@ class NowPlaying extends StatelessWidget{
                 itemCount: nowplay.length,
                 itemBuilder: (context, index){
                   return InkWell(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailNowPlay(name: nowplay[index]['title'], description: nowplay[index]['overview'], bannerurl: 'https://image.tmdb.org/t/p/w500/'+nowplay[index]['backdrop_path'], posterurl: 'https://image.tmdb.org/t/p/w500/'+nowplay[index]['poster_path'], vote: nowplay[index]['vote_average'].toString(), launchon: nowplay[index]['release_date'])));
+                    },
                     child: Container(
                       width: 200,
                       //padding: EdgeInsets.only(left: 5.0),
