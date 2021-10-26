@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:my_moviepro/detail/detail_nowplay.dart';
 import 'package:my_moviepro/widgets/now_play.dart';
 import 'package:my_moviepro/widgets/popular.dart';
 import 'package:my_moviepro/widgets/top_rated.dart';
@@ -86,7 +87,7 @@ class _MoviedbMain extends State<MoviedbMain>{
       body: ListView(
         scrollDirection: Axis.vertical,
         children: [
-          NowPlaying(nowplay:nowplayingmovies),
+          NowPlaying(nowplay: nowplayingmovies, apikey_e1: apikey, apireadaccesstoken_e1: apireadacesstoken),
           Padding(
             padding: EdgeInsets.only(top: 10.0),
             child: TopRated(toprated: topratedmovies),
