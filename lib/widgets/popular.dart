@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_moviepro/detail/detail_popular.dart';
 import 'package:my_moviepro/utils/text.dart';
 
 class Popular extends StatelessWidget{
 
   final List popular;
+  final String apikey_e1, apireadaccesstoken_e1;
 
-  const Popular({Key? key, required this.popular}) : super(key: key);
+  const Popular({Key? key, required this.popular, required this.apikey_e1, required this.apireadaccesstoken_e1}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,9 @@ class Popular extends StatelessWidget{
                 itemCount: popular.length,
                 itemBuilder: (context, index){
                   return InkWell(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailPopular(name: popular[index]['title'], description: popular[index]['overview'], bannerurl: 'https://image.tmdb.org/t/p/w500/'+popular[index]['backdrop_path'], posterurl: 'https://image.tmdb.org/t/p/w500/'+popular[index]['poster_path'], vote: popular[index]['vote_average'].toString(), launchon: popular[index]['release_date'], apikey_e2: apikey_e1, apireadacesstoken_e2: apireadaccesstoken_e1)));
+                    },
                     child: Container(
                       width: 140,
                       child: Column(

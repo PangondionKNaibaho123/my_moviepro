@@ -3,20 +3,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_moviepro/utils/text.dart';
 
-
-class DetailNowPlay extends StatelessWidget{
+class DetailPopular extends StatelessWidget{
 
   final String name, description, bannerurl, posterurl, vote, launchon, apikey_e2, apireadacesstoken_e2;
-  final List genre;
-  final int nowplayid;
 
-
-  const DetailNowPlay({Key? key, required this.name, required this.description, required this.bannerurl, required this.posterurl, required this.vote, required this.launchon, required this.apikey_e2, required this.apireadacesstoken_e2, required this.genre, required this.nowplayid}) : super(key: key);
-
-  //const DetailNowPlay({Key? key, required this.name, required this.description, required this.bannerurl, required this.posterurl, required this.vote, required this.launchon, required this.apikey_e2, required this.apireadacesstoken_e2, required this.nowplayid}) : super(key: key);
+  const DetailPopular({Key? key, required this.name, required this.description, required this.bannerurl, required this.posterurl, required this.vote, required this.launchon, required this.apikey_e2, required this.apireadacesstoken_e2}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return Scaffold(
       body: Container(
         child: ListView(
@@ -81,7 +76,7 @@ class DetailNowPlay extends StatelessWidget{
                         children: [
                           Icon(Icons.date_range,color: Colors.black,size: 30,),
                           Padding(
-                              padding: EdgeInsets.only(left: 40),
+                            padding: EdgeInsets.only(left: 40),
                             child: modifiedText(text: launchon, color: Colors.black, size: 17),
                           )
                         ],
@@ -107,19 +102,14 @@ class DetailNowPlay extends StatelessWidget{
               ),
             ),
             Container(
-              padding: EdgeInsets.only(top: 30, left: 10),
-              child: modifiedText(text: changeString(name), color: Colors.black, size: 15)
+                padding: EdgeInsets.only(top: 30, left: 10),
+                child: modifiedText(text: changeString(name), color: Colors.black, size: 15)
             )
           ],
         ),
       ),
     );
   }
-
-  /*String trimString(String input_e1){
-    String result_e2 = input_e1.trim();
-    return result_e2;
-  }*/
 
   String changeString (String input){
 

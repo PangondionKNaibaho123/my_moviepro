@@ -94,7 +94,7 @@ class _MoviedbMain extends State<MoviedbMain>{
           ),
           Padding(
             padding: EdgeInsets.only(top: 10.0),
-            child: Popular(popular: popularmovies),
+            child: Popular(popular: popularmovies, apikey_e1: apikey, apireadaccesstoken_e1: apireadacesstoken),
           ),
           Padding(
             padding: EdgeInsets.only(top: 10.0),
