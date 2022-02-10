@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_moviepro/detail/detail_toprated.dart';
 import 'package:my_moviepro/utils/text.dart';
 
 class TopRated extends StatelessWidget{
 
   final List toprated;
+  final String apikey_e1, apireadaccesstoken_e1;
 
-  const TopRated({Key? key, required this.toprated}) : super(key: key);
+  const TopRated({Key? key, required this.toprated, required this.apikey_e1, required this.apireadaccesstoken_e1}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,9 @@ class TopRated extends StatelessWidget{
                 itemCount: toprated.length,
                 itemBuilder: (context, index){
                   return InkWell(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailTopRated(name: toprated[index]['title'], description: toprated[index]['overview'], bannerurl: 'https://image.tmdb.org/t/p/w500/'+toprated[index]['backdrop_path'], posterurl: 'https://image.tmdb.org/t/p/w500/'+toprated[index]['poster_path'], vote: toprated[index]['vote_average'].toString(), launchon: toprated[index]['release_date'], apikey_e2: apikey_e1, apireadacesstoken_e2: apireadaccesstoken_e1, genre: toprated[index]['genre_ids'])));
+                    },
                     child: Container(
                       width: 140,
                       child: Column(
